@@ -8,7 +8,10 @@ protected:
     string manufacture;
     string model;
     int year;
-
+    string fueltype;
+    int batterycapacity;
+    int topspeed;
+    int flightrange;
 public:
     void setVehicle(int id, string manu, string mod, int y) {
         vehicleID = id;
@@ -30,9 +33,6 @@ public:
 };
 
 class Car : public Vehicle {
-protected:
-    string fueltype;
-
 public:
     void setCar(int id, string manu, string mod, int y, string fuel) {
         setVehicle(id, manu, mod, y);
@@ -43,11 +43,10 @@ public:
         displayVehicle();
         cout << "Fuel Type: " << fueltype << endl;
     }
+
+    
 };
 class ElectricCar : public Car {
-protected:
-   int batterycapacity;
-
 public:
     void electriccar(int id, string manu, string mod, int y, string fuel, int battery) {
         setCar(id, manu, mod, y,fuel);
@@ -64,9 +63,6 @@ public:
 
 
 class Sportscar : public ElectricCar {
-protected:
-   int topspeed;
-
 public:
     void sportscar(int id, string manu, string mod, int y, string fuel, int battery, int speed) {
          electriccar(id, manu, mod, y, fuel, battery);
@@ -112,7 +108,7 @@ public:
 
 class Aircraft : public Vehicle {
 protected:
-    int flightrange;
+  
 
 public:
     void aircraft(int id, string manu, string mod, int y, string fuel, int range) {
@@ -160,7 +156,6 @@ car1[car1count++].sedancar(301, "Toyota", "Camry", 2021, "Petrol");
         case 1: {
             int id, year,battery;
             string manu, model, fuel;
-
             cout << "Enter Vehicle ID: ";
             cin >> id;
             cout << "Enter Manufacturer: ";
