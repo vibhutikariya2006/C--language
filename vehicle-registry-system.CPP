@@ -30,6 +30,19 @@ public:
         cout << "Model: " << model << endl;
         cout << "Year: " << year << endl;
     }
+
+    void getdata(){
+          int id, year,battery;
+            string manu, model, fuel;
+            cout << "Enter Vehicle ID: ";
+            cin >> id;
+            cout << "Enter Manufacturer: ";
+            cin >> manu;
+            cout << "Enter Model: ";
+            cin >> model;
+            cout << "Enter Year: ";
+            cin >> year;
+    }
 };
 
 class Car : public Vehicle {
@@ -107,9 +120,6 @@ public:
 
 
 class Aircraft : public Vehicle {
-protected:
-  
-
 public:
     void aircraft(int id, string manu, string mod, int y, string fuel, int range) {
         setVehicle(id, manu, mod, y);
@@ -156,19 +166,12 @@ car1[car1count++].sedancar(301, "Toyota", "Camry", 2021, "Petrol");
         case 1: {
             int id, year,battery;
             string manu, model, fuel;
-            cout << "Enter Vehicle ID: ";
-            cin >> id;
-            cout << "Enter Manufacturer: ";
-            cin >> manu;
-            cout << "Enter Model: ";
-            cin >> model;
-            cout << "Enter Year: ";
-            cin >> year;
+            cars->getdata();
             cout << "Enter Fuel Type: ";
             cin >> fuel;
             cout << "Enter Battery Capacity: ";
             cin >> battery;
-
+        
             cars[carscount].electriccar(id, manu, model, year, fuel, battery);
             carscount++;
 
@@ -179,15 +182,7 @@ car1[car1count++].sedancar(301, "Toyota", "Camry", 2021, "Petrol");
         case 2: {
             int id, year,battery,speed;
             string manu, model, fuel;
-
-            cout << "Enter Vehicle ID: ";
-            cin >> id;
-            cout << "Enter Manufacturer: ";
-            cin >> manu;
-            cout << "Enter Model: ";
-            cin >> model;
-            cout << "Enter Year: ";
-            cin >> year;
+            car->getdata();
             cout << "Enter Fuel Type: ";
             cin >> fuel;
             cout << "Enter Battery Capacity: ";
@@ -205,15 +200,7 @@ car1[car1count++].sedancar(301, "Toyota", "Camry", 2021, "Petrol");
         case 3: {
             int id, year;
             string manu, model, fuel;
-
-            cout << "Enter Vehicle ID: ";
-            cin >> id;
-            cout << "Enter Manufacturer: ";
-            cin >> manu;
-            cout << "Enter Model: ";
-            cin >> model;
-            cout << "Enter Year: ";
-            cin >> year;
+            car1->getdata();
             cout << "Enter Fuel Type: ";
             cin >> fuel;
 
@@ -227,15 +214,7 @@ car1[car1count++].sedancar(301, "Toyota", "Camry", 2021, "Petrol");
            case 4: {
             int id, year;
             string manu, model, fuel;
-
-            cout << "Enter Vehicle ID: ";
-            cin >> id;
-            cout << "Enter Manufacturer: ";
-            cin >> manu;
-            cout << "Enter Model: ";
-            cin >> model;
-            cout << "Enter Year: ";
-            cin >> year;
+            car2->getdata();
             cout << "Enter Fuel Type: ";
             cin >> fuel;
 
@@ -249,15 +228,7 @@ car1[car1count++].sedancar(301, "Toyota", "Camry", 2021, "Petrol");
            case 5: {
             int id, year, range;
             string manu, model, fuel;
-
-            cout << "Enter Vehicle ID: ";
-            cin >> id;
-            cout << "Enter Manufacturer: ";
-            cin >> manu;
-            cout << "Enter Model: ";
-            cin >> model;
-            cout << "Enter Year: ";
-            cin >> year;
+            craft->getdata();
             cout << "Enter Fuel Type: ";
             cin >> fuel;
             cout << "Enter flight range : ";
