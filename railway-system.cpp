@@ -6,7 +6,7 @@ class Trainclass
 private:
     int trainnumber;
     char trainName[50];
-    char source[50];
+    char source[100];
     char destination[50];
     char traintime[10];
 
@@ -34,9 +34,13 @@ public:
 
         cout << "Enter traintime : ";
         cin >> traintime;
+        
+        cout << "Train Added Successfully!" << endl;
+
     }
 
     void class2(){
+        cout<< endl<<"---Train Details---"<<endl;
         cout << "Enter trainnumber : " << trainnumber << endl;
         cout << "Enter trainName : " << trainName << endl;
         cout << "Enter source : " << source << endl;
@@ -52,87 +56,53 @@ public:
         if (a == trainnumber)
         {
             cout << "Train with number " << trainnumber << "is found" << endl;
+
+        cout<< endl<<"---Train Details---"<<endl;
+        cout << "Enter trainnumber : " << trainnumber << endl;
+        cout << "Enter trainName : " << trainName << endl;
+        cout << "Enter source : " << source << endl;
+        cout << "Enter destination : " << destination << endl;
+        cout << "Enter traintime : " << traintime << endl;
         }
         else
         {
-            cout << "Train with number " << trainnumber << "is not found" << endl;
+            cout << "Train with number " << a << " is not found" << endl;
         }
     }
 
     void class4()
     {
-        cout << "Exiting the system. Goodbye! " << endl;
+        cout << "Exiting the system. Thank You! " << endl;
     }
 };
 
 int main(){
 
     int choice;
-
-    // Trainclass s;
-
-    // while (choice)
-    // {
-    //     switch (choice)
-    //     {
-    //     case 1:
-    //         s.class1();
-    //         break;
-    //     case 2:
-    //         s.class2();
-    //         break;
-    //     case 3:
-    //         s.class3();
-    //         break;
-    //     case 4:
-    //         s.class4();
-    //         break;
-    //     }
-
-    // }
     Trainclass s1;
-    cout << "Enter your choice: ";
-    cin >> choice;
-   if(choice <= 4){
-        while (choice != 4){
-             Trainclass s1;
-    cout << "Enter your choice: ";
-    cin >> choice;
-        if (choice == 1){
+    do{
+         cout << "Enter your choice: ";
+        cin >> choice;
+        if (choice == 1)
+        {
             s1.class1();
         }
-        else if (choice == 2){
+        else if (choice == 2)
+        {
             s1.class2();
         }
-        else if (choice == 3){
-          s1.class3();
+        else if (choice == 3)
+        {
+         s1.class3();
         }
-         else if (choice == 4){
+         else if (choice == 4)
+        {
           s1.class4();
         }
-    }
-   }else{
-       cout<<"Wrong choice entered";
-   }
-    
-    // do{
-    //      cout << "Enter your choice: ";
-    //     cin >> choice;
-    //     if (choice == 1)
-    //     {
-    //         s1.class1();
-    //     }
-    //     else if (choice == 2)
-    //     {
-    //         s1.class2();
-    //     }
-    //     else if (choice == 3)
-    //     {
-    //      s1.class3();
-    //     }
-    //      else if (choice == 4)
-    //     {
-    //       s1.class4();
-    //     }
-    // }while(choice != 4);
+        else
+		{
+			cout << "Wrong choice entered." << endl;
+		}
+    }while(choice != 4);
+    	return 0;
 }
